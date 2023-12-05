@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Samin's Store</title>
+  <style>
+    /* Some basic styling for demonstration purposes */
+    body {
+      background-color: rgb(228, 235, 255);
+      font-family: Arial, sans-serif;
+      text-align: center;
+      overflow-y: scroll;
+    }
+    .container {
+      width: 80%;
+      margin: 0 auto;
+    }
+    .categories {
+      border: 1px solid #d1d4ed;
+      padding: 10px;
+      margin: 10px;
+      width: 200px;
+      display: inline-block;
+      text-align: center;
+    }
+    .product {
+      background-color: rgb(255, 255, 255);
+      border: 1px solid #d1d4ed;
+      padding: 10px;
+      margin: 10px;
+      width: 200px;
+      display: inline-block;
+      text-align: center;
+    }
+    #cart {
+      border: 1px solid #000;
+      padding: 10px;
+      margin-top: 20px;
+      width: 300px;
+      max-height: 200px;
+      overflow-y: auto;
+      margin: 0 auto;
+    }
+    .tab {
+      overflow: hidden;
+      border: 1px solid #ccc;
+      background-color: #f1f1f1;
+    }
+    .tab button {
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline:none;
+      cursor: pointer;
+      padding: 14px 16px;
+      font-size: 17px;
+    }
+    .tab button:hover {
+      background-color: #ddd;
+    }
+    .tab button.active {
+      background-color: #ccc;
+      display:block;
+    }
+    .tabcontent {
+      display: none;
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      border-top: none;
+    }
+  </style>
+</head>
+<h1 style="font-size:50px;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, Helvetica, sans-serif;"><img src="C:\Users\ragea\Pictures\SSlogo.png" style="width: 50px";/>
+  <font color=#293354>SAMIN'S STORE</font></h1>
+<body>
+
+    <!--Tabs-->
+    <div class="tab">
+      <button class="tablinks" onclick="openStoreTab(event, 'Home')" id="defaultOpen">Home</button>
+      <button class="tablinks" onclick="openStoreTab(event, 'ShoppingCart')">Cart</button>
+      <button class="tablinks" onclick="openStoreTab(event, 'Contact')">Contact</button>
+    </div>
+
+    <!--Tab Contents-->
+    <div id="Home" class="tabcontent">
+
+      <iframe src="HomeData.html" height="2000px" width="1500px" style="border:none;" title="Iframe Example"></iframe>
+      </div>
+      
+  <div id="ShoppingCart" class="tabcontent">
+    <h2>Shopping Cart</h2>
+    <div id="cart"></div>
+  </div>
+
+  <script>
+    let cart = [];
+    let tax = 0.08;
+    let discount = 10;
+
+    function addToCart(productName, price) {
+      cart.push({ name: productName, price: price });
+      displayCart();
+    }
+
+    function displayCart() {
+      const cartDiv = document.getElementById('cart');
+      cartDiv.innerHTML = '';
+      
+      let total = 0;
+      cart.forEach(item => {
+        total += item.price;
+        cartDiv.innerHTML += `<p>${item.name} - $${item.price}</p>`;
+      });
+      
+      // subtotal
+      cartDiv.innerHTML += `<hr><p>Subtotal: $${(total).toFixed(2)}</p>`;
+      
+      // tax
+      cartDiv.innerHTML += `<hr><p>Tax: $${(total*tax)}</p>`;
+      
+      // checks if discount is applicable and prints correct total price
+      if (total*1.08 >= discount) {
+      cartDiv.innerHTML += `<hr><p>Discount: $${discount}</p>`;
+      cartDiv.innerHTML += `<hr><p>Total: $${(total*1.08-discount).toFixed(2)}</p>`;
+      } else {
+        cartDiv.innerHTML += `<hr><p>Total: $${(total+total*tax).toFixed(2)}</p>`;
+      }
+    }
+    </script>
+    </div>
+   <div id="Contact" class="tabcontent">
+    
+    <h3>Contact Information:</h3>
+    <p>Email: <a href="mailto:testemail123@example.com">testemail123@example.com</a></p>
+    <p>Customer Service #: 123-456-7890</p>
+    <p>Github: <a href="https://github.com/Samin-A1" target="_blank">Samin-A1</a></p>
+    </div>
+
+    <script>
+      function openStoreTab(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+      document.getElementById("defaultOpen").click();
+
+      </script>
+    
+</body>
+</html>
