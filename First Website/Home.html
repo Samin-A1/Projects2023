@@ -28,7 +28,8 @@
       border: 1px solid #d1d4ed;
       padding: 10px;
       margin: 10px;
-      width: 200px;
+      width: auto;
+      max-width: 300px;
       display: inline-block;
       text-align: center;
     }
@@ -44,7 +45,7 @@
     .tab {
       overflow: hidden;
       border: 1px solid #ccc;
-      background-color: #f1f1f1;
+      background-color: #293354;
     }
     .tab button {
       background-color: inherit;
@@ -54,12 +55,14 @@
       cursor: pointer;
       padding: 14px 16px;
       font-size: 17px;
+      color: white;
     }
     .tab button:hover {
       background-color: #ddd;
     }
     .tab button.active {
-      background-color: #ccc;
+      background-color: rgb(228, 235, 255);
+      color: #293354;
       display:block;
     }
     .tabcontent {
@@ -79,6 +82,7 @@
       <button class="tablinks" onclick="openStoreTab(event, 'Home')" id="defaultOpen">Home</button>
       <button class="tablinks" onclick="openStoreTab(event, 'ShoppingCart')">Cart</button>
       <button class="tablinks" onclick="openStoreTab(event, 'Contact')">Contact</button>
+      <button class="tablinks" onclick="openStoreTab(event, 'Flyer')">Flyer</button>
     </div>
 
     <!--Tab Contents-->
@@ -128,6 +132,12 @@
     }
     </script>
     </div>
+
+   <div id="Flyer" class="tabcontent">
+    
+   <a id="download_image" href="C:\Users\ragea\Documents\GitHub\Projects2023\First Website\SSlogo.png" download="C:\Users\ragea\Documents\GitHub\Projects2023\First Website\SSlogo.png" target=" _blank">Download Logo</a>
+   </div>
+
    <div id="Contact" class="tabcontent">
     
     <h3>Contact Information:</h3>
