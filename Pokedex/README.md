@@ -13,7 +13,7 @@ index.html
 - Main pokedex menu
 - Creates divs for all the different sections that will be used later by pokemon.js
 - Runs pokemon.js (deferred so it runs after the rest of the code)
-![Pokedex Index Page](/assets/Index.PNG)
+![Pokedex Index Page](/Pokedex/assets/Index.PNG)
 
 pokemon.js
 - Fetches data from PokeAPI and converts the response to java
@@ -27,7 +27,7 @@ detail.html
 - Pokemon detail menu 
 - Creates divs for all the different sections that will be used later by pokemon-detail.js
 - Runs pokemon-detail.js (deferred so it runs after the rest of the code)
-![Pokemon Detail Page](/assets/Detail/PNG)
+![Pokemon Detail Page](/Pokedex/assets/Detail/PNG)
 
 pokemon-detail.js
 - Fetches data from PokeAPI and converts the response to java
