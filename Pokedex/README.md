@@ -1,12 +1,12 @@
-#Pokedex Project
+# Pokedex Project
 
-###Purpose:
+### Purpose:
 The purpose of this project is to show my understanding of html, js, and css, and my capabilities in combining them to create a coherent website. To showcase this, the website fetches data from an API (PokeAPI) and utilizes the data to display the information in an organized way. The website itself is meant to act as a pokedex, meaning it stores pokemon and their respective data, which can easily be accessed.
 
-###What I Did/Learned:
+### What I Did/Learned:
 In completing this project, I learned how to fetch data from an API and use that data in the making of my website. In this specific case, I used pokeAPI in order to fetch data for each pokemon in Generation 1 and Generation 2, totalling to 251 pokemon. The website uses html in order to format and organize each page, and uses js in order to fetch the data for each pokemon and implement it into that predefined format. In doing so, I created a Pokemon Index page, where all pokemon are displayed in order, as well as a Pokemon Detail page, where you can find more information about the pokemon of your choosing. The website also contains a search feature in order to make it easier to find said pokemon.
 
-##Features:
+## Features:
 Below I have listed some of the prior updates made to the pokedex as well as its features:
 
 index.html
